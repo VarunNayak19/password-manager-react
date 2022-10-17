@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+.lockBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+.lockBox img {
+    height: 204px;
+    width: auto;
+    margin-bottom: 30px;
+}
+.lockBox p{
+    font-family: 'Open Sans', sans-serif;
+    height: 54px;
+    width: 281px;
+    color: #FFFFFF;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 27px;
+    text-align: center;
+}

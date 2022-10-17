@@ -1,0 +1,77 @@
+.loginBox {
+    display: flex;
+    height: 481px;
+    width: 839px;
+    border-radius: 15px;
+    background: linear-gradient(180deg, #20BBFF 0%, #0E85FF 100%);
+    box-shadow: 0 8px 18px 10px rgba(0,0,0,0.02);
+    margin-top: 205px;
+  }
+
+
+  
+  .signInBox{
+    height: 387px;
+    width: auto;
+    margin: 73px 0 0 78px;
+    display: flex;
+    flex-direction: column;
+  }
+  .signInHeading{
+    height: 27px;
+    width: 100%;
+    color: #FFFFFF;
+    font-family: "Open Sans";
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 27px;
+    text-align: center;
+    margin-bottom: 36px;
+  
+  }
+  .bottombox{
+    width: 100%;
+    height: 180px;
+    position: relative;
+  }
+  
+  .username{
+    margin-bottom: 16px;
+  }
+  .mpin{
+    margin-bottom: 19px;
+  }
+  .mpinBox{
+    position: relative;
+  }
+  .toggleEye{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    height: 24px;
+    width: 24px;
+    background-color: rgba(255,255,255,0.01);
+  }
+  .forgotPasswordText{
+    height: 19px;
+    color: #FFFFFF;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 19px;
+    text-align: right;
+  }
+  .signUpText{
+    position:absolute;
+    height: 19px;
+    color: #FFFFFF;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 19px;
+    text-align: left;
+    bottom: 0;
+  }
