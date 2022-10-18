@@ -1,0 +1,232 @@
+
+:root{
+    --Orange : #FFA043;
+    --headerColor : #F5F7FB;
+    --pageColor :#FAFAFA
+}
+@media screen and (max-width: 900px){
+    .homePageContainer{
+        margin: 0;
+    }
+}
+
+.homePageContainer{
+    width: 100%;
+    height: 100%;
+    margin: 0 12.2% 0 12.2%;
+}
+.homePageContent{
+    background-color:var(--pageColor);
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.leftTab{
+    height: 100vh;
+    width: 118px;
+    background-color: #2892FF;
+    display: flex;
+    flex-direction: column;
+}
+.burgirTabDiv, .homeTabDiv{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    margin-bottom: 24px;
+}
+.burgirIcon{
+    height: 22px;
+    width: 40px;
+}
+.orangeTab{
+    position: absolute;
+    height: 80px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background-color:var(--Orange);
+    left: 0;
+}
+.orangeOval{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -8px;
+}
+.content{
+    height: 100%;
+    width: 100%;
+}
+.headerContent{
+    height: 133px;
+    width: 100%;
+    background-color:var(--headerColor);
+    border-bottom: 2px solid #ffffff;
+}
+.headerContent{
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    padding-left: 7%;
+    padding-top: 2.5%;
+
+}
+.logoImage{
+    height: auto;
+    width: 177px;
+}
+.tabOptions{
+    padding: 36px 52px 0 0;
+    position: relative;
+}
+.iconTab{
+    height: 88px;
+    width: auto;
+}
+.titleAndSearch{
+    width: 100%;
+    height: 160px;
+    display: flex;
+    padding: 0 9% 0 7%;
+}
+.titleLeftSide{
+    height: 100%;
+    width: auto;
+}
+.sitesHeading{
+    margin-top: 38px;
+}
+.orangeUnderline{
+    height: 4px;
+    width: 36px;
+    border-radius: 2px;
+    background-color:var(--Orange)
+}
+.sitesP{
+    height: 41px;
+    width: 69px;
+    color: #3C4857;
+    font-family: "Open Sans";
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 41px;
+}
+.subHead{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-top: 37px;
+}
+.subHeadTitle{
+    height: 33px;
+    width: 141px;
+    color: #3C4857;
+    font-family: "Open Sans";
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 33px;
+    margin-right: 6px;
+}
+.counter{
+    box-sizing: border-box;
+    height: 37px;
+    width: 37px;
+    border: 1px solid #FFFFFF;
+    background-color: #0E85FF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 27px;
+    color: #FFFFFF;
+    margin-right: 13px;
+
+}
+.titleRightSide{
+    display: flex;
+    margin-left: 53%;
+}
+.searchBar{
+    height: auto;
+    width: auto;
+    position: relative;
+    display: flex;
+}
+.searchBarInput{
+    height: 32px;
+    width: 245px;
+    margin-top: 46px;
+    background-color: transparent;
+    color: #A5A5A5;
+    font-family: "Open Sans";
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 24px;
+    border: none;
+    border-bottom: 1px solid #0E85FF;
+    outline: none;
+    padding-bottom: 8px;
+}
+.searchIcon{
+    position: absolute;
+    right: 0;
+    top:45px;
+    height: 24px;
+    width: 24px;
+}
+.addIcon{
+    height: 48px;
+    width: 48px;
+    margin-left: 38px;
+    margin-top: 35px;
+}
+.addSite{
+    height: 215px;
+    width: 819px;
+    border-radius: 107.5px;
+    background-color: var(--headerColor);
+    margin: 112px 0 0 251px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addSite p{
+    height: 72px;
+    width: 367px;
+    color: #3C4857;
+    font-family: "Open Sans";
+    font-size: 26px;
+    letter-spacing: 0;
+    line-height: 36px;
+    text-align: center;
+}
+.sitesGrid{
+    width: 100%;
+    height: auto;
+    margin-top: 42px;
+    padding-left: 90px;
+    padding-right: 100px;
+}
+.siteContainer{
+    height: 115px;
+    width: 363px;
+    border-radius: 14px;
+    background-color: white;
+    box-shadow: 0 8px 18px 10px rgba(0,0,0,0.02);
+}
+.gridFlex{
+    display: grid;
+    grid-row-gap: 2px;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}

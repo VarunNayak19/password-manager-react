@@ -1,11 +1,20 @@
+.loginContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 205px;
+  margin-bottom: 338px;
+}
+
 .loginBox {
     display: flex;
+    flex-wrap: wrap;
     height: 481px;
-    width: 839px;
+    width: auto;
     border-radius: 15px;
     background: linear-gradient(180deg, #20BBFF 0%, #0E85FF 100%);
     box-shadow: 0 8px 18px 10px rgba(0,0,0,0.02);
-    margin-top: 205px;
+    margin-left: -20px;
+    margin-top: 210px;
   }
 
 
@@ -58,7 +67,7 @@
     color: #FFFFFF;
     font-family: "Open Sans";
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0;
     line-height: 19px;
     text-align: right;
@@ -69,9 +78,54 @@
     color: #FFFFFF;
     font-family: "Open Sans";
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0;
     line-height: 19px;
     text-align: left;
     bottom: 0;
+  }
+
+  @media screen and (min-width: 500px) and (max-width: 900px) {
+    body{
+      background-color: aqua;
+    }
+    .loginContainer{
+      margin:0;
+    }
+    .loginBox{
+      height: 100%;
+      width: 100%;
+      padding: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0px;
+      margin: 0;
+    }
+
+  }
+  @media screen and (min-width: 350px) and (max-width: 500px) {
+    .loginBox{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 120vh;
+    }
+    .loginContainer{
+      height: 120vh;
+      margin:0;
+      margin-top: 0px;
+      margin-bottom: -30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .loginBox{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0px;
+      margin: 0;
+    }
   }

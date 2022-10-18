@@ -1,0 +1,11 @@
+@media screen and (min-width: 500px) and (max-width: 900px) {
+    .formBox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:300px;
+    }
+    .signInBox{
+        margin: 0;
+    }
+}

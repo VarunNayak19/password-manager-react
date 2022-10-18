@@ -7,8 +7,8 @@
     padding: 25px;
 }
 .lockBox img {
-    height: 204px;
-    width: auto;
+    height: 202px;
+    width: 170px;
     margin-bottom: 30px;
 }
 .lockBox p{
@@ -22,4 +22,10 @@
     letter-spacing: 1px;
     line-height: 27px;
     text-align: center;
+}
+
+@media screen and (min-width: 350px) and (max-width: 500px){
+    .lockBox{
+        margin-left: 10%;
+    }
 }
