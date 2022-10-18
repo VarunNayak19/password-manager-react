@@ -1,9 +1,52 @@
 
 import SiteContainer from '../../components/siteContainer/siteContainer'
 import './homePage.css'
-
+import { useState } from 'react'
 
 const HomePage = () => {
+  const [modal, setModal] = useState(false)
+const toggleModal =()=>{
+  setModal(!modal)
+}
+
+const data = [
+  {
+      siteName: 'Facebook',
+      url: 'www.facebook.com',
+      sector: 'Social Media',
+      userName: 'ssmraok',
+      sitePassword: 'abcdXYZ',
+      notes: '',
+      icon: '/password-manager/public/appIcons/facebookIcon.png',
+  },
+  {
+      siteName: 'YouTube',
+      url: 'www.youtube.com',
+      sector: 'Social Media',
+      userName: 'ssmraok',
+      sitePassword: 'abcd123',
+      notes: '',
+      icon: '/password-manager/public/appIcons/youtubeIcon.png',
+  },
+  {
+      siteName: 'Linkedin',
+      url: 'www.linkdin.com',
+      sector: 'Social Media',
+      userName: 'ssmraok',
+      sitePassword: 'abcd123',
+      notes: '',
+      icon: '/password-manager/public/appIcons/linkedinIcon.png'
+  }
+]
+
+if (localStorage.getItem('user Data') === null || 'undefined') {
+  localStorage.setItem('user Data', JSON.stringify(data))
+}
+
+const previousData = JSON.parse(localStorage.getItem('user Data') || '[]')
+
+console.log(previousData)
+
   return (
     <div className='homePageContainer'>
       <div className='homePageContent'>
@@ -49,7 +92,7 @@ const HomePage = () => {
                   <input type="text" placeholder='Search' className='searchBarInput' />
                   <img src={require("../../assets/image/search.png")} alt="searchIcon" className='searchIcon' />
                 </div>
-                <img src={require("../../assets/image/add_btn.png")} alt="addIcon" className='addIcon' />
+                <img src={require("../../assets/image/add_btn.png")} alt="addIcon" className='addIcon' onClick={toggleModal}/>
               </div>
             </div>
             <div className='vaultWindow'>
@@ -59,15 +102,38 @@ const HomePage = () => {
               </div> */}
               <div className='sitesGrid gridFlex'>
                 <SiteContainer appIcon="facebook" />
-                <SiteContainer />
-                <SiteContainer />
-                <SiteContainer />
-                <SiteContainer />
+                <SiteContainer appIcon="youtube" />
+                <SiteContainer appIcon="pinterest" />
+                <SiteContainer appIcon="gmail" />
+                <SiteContainer appIcon="linkedin" />
                 <SiteContainer />
                 <SiteContainer />
                 <SiteContainer />
                 <SiteContainer />
               </div>
+              
+              {
+                modal &&
+                <div className='overlaymodal'>
+                  <div className="modal">
+                    <div onClick={toggleModal} className="overlay"></div>
+                    <div className="modal-content">
+                      <h2>Hello Modal</h2>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+                        perferendis suscipit officia recusandae, eveniet quaerat assumenda
+                        id fugit, dignissimos maxime non natus placeat illo iusto!
+                        Sapiente dolorum id maiores dolores? Illum pariatur possimus
+                        quaerat ipsum quos molestiae rem aspernatur dicta tenetur. Sunt
+                        placeat tempora vitae enim incidunt porro fuga ea.
+                      </p>
+                      <button className="close-modal" onClick={toggleModal}>
+                        CLOSE
+                      </button>
+                    </div>
+                  </div>
+                  </div>
+              }
             </div>
           </div>
         </div>
