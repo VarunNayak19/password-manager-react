@@ -6,12 +6,12 @@
     align-items: center;
     padding: 25px;
 }
-.lockBox img {
+.lockboxLogo{
     height: 202px;
     width: 170px;
     margin-bottom: 30px;
 }
-.lockBox p{
+.protectSentence{
     font-family: 'Open Sans', sans-serif;
     height: 54px;
     width: 281px;
@@ -23,9 +23,66 @@
     line-height: 27px;
     text-align: center;
 }
+.passmanagerLogoName,.signInTabDiv,.signUpTabDiv{
+    display: none;
+}
 
 @media screen and (min-width: 350px) and (max-width: 500px){
     .lockBox{
         margin-left: 10%;
+    }
+}
+@media screen and (height:640px) and (width: 360px){
+    .protectSentence{
+        display: none;
+    }
+    .lockboxLogo{
+        height: 68px;
+        width: 56.67px;
+    }
+    .passmanagerLogoName,.signInTabDiv,.signUpTabDiv{
+        display:flex;
+    }
+    .logoBox{
+        display: flex;
+        margin-bottom: 30px;
+    }
+    .passmanagerLogoName{
+        height: 54px;
+        width: 100px;
+        color: #FBFBFB;
+        font-family: "Open Sans";
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        line-height: 27px;
+        margin-left: 13px;
+    }
+    .switchingTab{
+        display: flex;
+        width: 260px;
+        justify-content: space-between;
+    }
+    .signInTabDiv,.signUpTabDiv{
+        height: 27px;
+        width: 90px;
+        color: #FFFFFF;
+        font-family: "Open Sans";
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 27px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none !important;
+    }
+    .signUpTabDiv p{
+        text-decoration: none;
+    }
+    .orangeUnder{
+        height: 4px;
+        width: 81px;
+        border-radius: 3.5px;
+        background-color: #FFA222;
     }
 }

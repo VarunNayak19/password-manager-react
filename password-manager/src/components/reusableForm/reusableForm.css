@@ -9,3 +9,11 @@
         margin: 0;
     }
 }
+@media screen and (height:640px) and (width: 360px){
+    .formBox{
+        margin-left: 30px;
+    }
+    .signUpText{
+        display: none;
+    }
+}

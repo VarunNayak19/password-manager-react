@@ -4,7 +4,37 @@
     display: flex;
     flex-direction: column;
 }
+.blackToast{
+    display: none;
+}
 
 .loginBox{
     margin-top: 0;
+}
+@media screen and (height:640px) and (width: 360px){
+    .greenboxSuccess{
+        display: none;
+    }
+    .blackToast{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 66px;
+        width: 320px;
+        border-radius: 33px;
+        background-color: #323232;
+        position: absolute;
+        margin-top: 680px;
+        margin-left: 150px;
+    }
+    .blackToast p{
+        height: 49px;
+        width: 187px;
+        color: #FFFFFF;
+        font-family: "Open Sans";
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 22px;
+        text-align: center;
+    }
 }

@@ -1,16 +1,31 @@
 
 import SiteContainer from '../../components/siteContainer/siteContainer'
 import './homePage.css'
+// import Modal from '../../components/modals/modal1/modal1'
 import { useState } from 'react'
 
 const HomePage = () => {
   const [modal, setModal] = useState(false)
-const toggleModal =()=>{
-  setModal(!modal)
-}
+  const [users, setUsers] = useState({
+    url: "", siteName: "", sector: "", userName: "", sitepass: "", notes: ""
+  })
+  const toggleModal = () => {
+    setModal(!modal)
+  }
+  const [orangeTab1, setorangeTab1] = useState(false)
+  const [orangeTab2, setorangeTab2] = useState(true)
+  const showTab1 = () => {
+    setorangeTab1(true);
+    setorangeTab2(false);
+  }
 
-const data = [
-  {
+  const showTab2 = () => {
+    setorangeTab2(true);
+    setorangeTab1(false);
+  }
+  console.log(orangeTab1)
+  const data = [
+    {
       siteName: 'Facebook',
       url: 'www.facebook.com',
       sector: 'Social Media',
@@ -18,8 +33,8 @@ const data = [
       sitePassword: 'abcdXYZ',
       notes: '',
       icon: '/password-manager/public/appIcons/facebookIcon.png',
-  },
-  {
+    },
+    {
       siteName: 'YouTube',
       url: 'www.youtube.com',
       sector: 'Social Media',
@@ -27,8 +42,8 @@ const data = [
       sitePassword: 'abcd123',
       notes: '',
       icon: '/password-manager/public/appIcons/youtubeIcon.png',
-  },
-  {
+    },
+    {
       siteName: 'Linkedin',
       url: 'www.linkdin.com',
       sector: 'Social Media',
@@ -36,30 +51,51 @@ const data = [
       sitePassword: 'abcd123',
       notes: '',
       icon: '/password-manager/public/appIcons/linkedinIcon.png'
+    }
+  ]
+
+  if (localStorage.getItem('user Data') === null || 'undefined') {
+    localStorage.setItem('user Data', JSON.stringify(data))
   }
-]
 
-if (localStorage.getItem('user Data') === null || 'undefined') {
-  localStorage.setItem('user Data', JSON.stringify(data))
-}
+  const previousData = JSON.parse(localStorage.getItem('user Data') || '[]')
 
-const previousData = JSON.parse(localStorage.getItem('user Data') || '[]')
+  console.log(previousData)
 
-console.log(previousData)
+  const getFormData = (e:any) => {
+    console.log(e);
+  }
+  let name:any ;
+  let value:any;
+  const handleInput = (r:any) =>{
+    name = r.event.name;
+    value = r.event.value;
+    console.log(name)
+
+    setUsers({ ...users, [name]:value})
+  }
 
   return (
     <div className='homePageContainer'>
       <div className='homePageContent'>
         <div className='leftTab'>
           <div className='burgirTabDiv'>
-            <div className='orangeTab'></div>
-            <img src={require("../../assets/image/burger_menu.png")} alt='burgir' className='burgirIcon' />
-            <div className='orangeOval'><img src={require("../../assets/image/Oval.png")} alt="" /></div>
+            {
+              orangeTab1 &&
+              <div className='orangeTab tab1' id='orangeTabId'></div>
+            }
+            <img src={require("../../assets/image/burger_menu.png")} alt='burgir' className='burgirIcon' onClick={showTab1} />
+            {
+              orangeTab1 &&
+              <div className='orangeOval '><img src={require("../../assets/image/Oval.png")} alt="" className='tab1' /></div>
+            }
           </div>
           <div className='homeTabDiv'>
-            <div className='orangeTab'></div>
-            <img src={require("../../assets/image/home_icn.png")} alt='home' className='homeIcon' />
-            <div className='orangeOval'><img src={require("../../assets/image/Oval.png")} alt="" /></div>
+            {orangeTab2 && <div className='orangeTab tab2'></div>}
+
+            <img src={require("../../assets/image/home_icn.png")} alt='home' className='homeIcon' onClick={showTab2} />
+            {orangeTab2 && <div className='orangeOval'><img src={require("../../assets/image/Oval.png")} alt="" /></div>}
+
           </div>
         </div>
         <div className='content'>
@@ -92,7 +128,7 @@ console.log(previousData)
                   <input type="text" placeholder='Search' className='searchBarInput' />
                   <img src={require("../../assets/image/search.png")} alt="searchIcon" className='searchIcon' />
                 </div>
-                <img src={require("../../assets/image/add_btn.png")} alt="addIcon" className='addIcon' onClick={toggleModal}/>
+                <img src={require("../../assets/image/add_btn.png")} alt="addIcon" className='addIcon' onClick={toggleModal} />
               </div>
             </div>
             <div className='vaultWindow'>
@@ -114,25 +150,52 @@ console.log(previousData)
               
               {
                 modal &&
-                <div className='overlaymodal'>
+                <div className='overlayModal' >
                   <div className="modal">
                     <div onClick={toggleModal} className="overlay"></div>
-                    <div className="modal-content">
-                      <h2>Hello Modal</h2>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-                        perferendis suscipit officia recusandae, eveniet quaerat assumenda
-                        id fugit, dignissimos maxime non natus placeat illo iusto!
-                        Sapiente dolorum id maiores dolores? Illum pariatur possimus
-                        quaerat ipsum quos molestiae rem aspernatur dicta tenetur. Sunt
-                        placeat tempora vitae enim incidunt porro fuga ea.
-                      </p>
-                      <button className="close-modal" onClick={toggleModal}>
-                        CLOSE
-                      </button>
+                    <div className="modalContent">
+                      <form className='modal1' onSubmit={getFormData}>
+                        <div className='siteNameModalHead'>Add Site</div>
+                        <div className='line1 flexColuming'>
+                          <label>URL</label>
+                          <input type="text" name="url" id="" className='urlInput' value={users.url} onChange={handleInput}/>
+                        </div>
+                        <div className='line2 rowFlexing'>
+                          <div className='leftInput flexColuming'>
+                            <label>Site Name</label>
+                            <input type="text" name="siteName" id="" value={users.siteName} onChange={handleInput}/>
+                          </div>
+                          <div className='rightInput flexColuming'>
+                            <label>Sector/Folder</label>
+                            <input type="text" name="sector" id="" value={users.sector} onChange={handleInput}/>
+                          </div>
+
+                        </div>
+                        <div className='line3 rowFlexing'>
+                          <div className='leftInput flexColuming'>
+                            <label>User Name</label>
+                            <input type="text" name="userName" id="" value={users.userName} onChange={handleInput}/>
+                          </div>
+                          <div className='rightInput flexColuming'>
+                            <label>Site Password</label>
+                            <input type="password" name="sitepass" id="" value={users.sitepass} onChange={handleInput}/>
+                          </div>
+                        </div>
+                        <div className='line4 flexColuming'>
+                          <label>Notes</label>
+                          <textarea name="notes" id="" className='textArea' value={users.notes} onChange={handleInput}></textarea>
+                        </div>
+                        <div className='buttonsLine5'>
+                          <button>Reset</button>
+                          <button type='submit'>Save</button>
+                        </div>
+                        <button className="close-modal" onClick={toggleModal}>
+                          <img src={require("../../assets/image/close_btn.png")} alt="" />
+                        </button>
+                      </form>
                     </div>
                   </div>
-                  </div>
+                </div>
               }
             </div>
           </div>

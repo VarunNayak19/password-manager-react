@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 #root{
-  height: 110vh;
+  height: 100vh;
   width: auto;
 }
 .app{

@@ -87,7 +87,7 @@
 
   @media screen and (min-width: 500px) and (max-width: 900px) {
     body{
-      background-color: aqua;
+      /* background-color: aqua; */
     }
     .loginContainer{
       margin:0;
@@ -128,4 +128,8 @@
       border-radius: 0px;
       margin: 0;
     }
+  }
+
+  @media screen and (height:640px) and (width: 360px){
+    
   }

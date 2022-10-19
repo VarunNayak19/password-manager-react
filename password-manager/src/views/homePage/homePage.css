@@ -27,6 +27,7 @@
     background-color: #2892FF;
     display: flex;
     flex-direction: column;
+    z-index: 2;
 }
 .burgirTabDiv, .homeTabDiv{
     display: flex;
@@ -50,6 +51,9 @@
     background-color:var(--Orange);
     left: 0;
 }
+/* .tab1{
+    display: none;
+} */
 .orangeOval{
     display: flex;
     align-items: center;
@@ -70,6 +74,7 @@
 .headerContent{
     display: flex;
     justify-content: space-between;
+    z-index: 2;
 }
 .logo{
     padding-left: 7%;
@@ -231,6 +236,11 @@
 }
 
 /* Modal */
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 body.active-modal {
     overflow-y: hidden;
 }
@@ -245,33 +255,88 @@ body.active-modal {
 .modal, .overlay {
     /* height: 891px;
     width: 1321px; */
-    width: 69.420vw;
-    height: 100vh;
+    width: 70vw;
+    height: auto;
     top: 14%;
-    right: 12.3%;
+    /* right: 12.3%; */
     bottom: 0;
     position: fixed;
 }
 
 .overlay {
     background: rgba(49,49,49,0.8);
+
 }
-.modal-content {
+.modalContent {
     position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* top: 40%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
     line-height: 1.4;
     background: #f1f1f1;
-    padding: 14px 28px;
+    /* padding: 14px 28px; */
     border-radius: 3px;
     max-width: 600px;
     min-width: 300px;
 }
+.modalContent{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
 
 .close-modal {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    background-color: transparent;
+    border: none;
+    top: -20px;
+    right: -20px;
     padding: 5px 7px;
+}
+
+/* modal1 */
+.modal1{
+    width: auto;
+    height: auto;
+    padding: 24.5px 37.5px 30px 30.5px;
+    background-color: #f1f1f1;
+    position: relative;
+}
+.flexColuming{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+.rowFlexing{
+    display: flex;
+}
+.textArea{
+    width:100%;
+    height: 71px;
+}
+.siteNameModalHead{
+    height: 41px;
+    width: 701px;
+    color: #3C4857;
+    font-family: "Open Sans";
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 41px;
+    margin-bottom: 40px;
+}
+.line1 label,.leftInput label,.rightInput label{
+    height: 24px;
+    width: auto;
+    color: #949CA5;
+    font-family: "Open Sans";
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-bottom: 10.5px;
+}
+.urlInput{
+    width: 701px;
+    position: relative;
 }

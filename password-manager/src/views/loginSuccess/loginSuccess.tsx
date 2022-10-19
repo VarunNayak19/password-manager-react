@@ -11,8 +11,15 @@ import GreenBox from '../../components/greenBox/greenBox'
 const LoginSuccess = () => {
     return (
         <div>
-            <GreenBox message="Congrats!!! Success, Signin to access the valut"/>
+            <div className='greenboxSuccess'>
+                <GreenBox message="Congrats!!! Success, Signin to access the valut" />
+            </div>
+            <div className='blackToast'>
+                <p>Congrtats!!! Success
+                    Signin to access the vault</p>
+            </div>
             <LoginScreen />
+
         </div>
     )
 }
