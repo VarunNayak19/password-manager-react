@@ -8,7 +8,7 @@ const SiteContainer = (props:any) => {
             <div className='siteHead'>
                 <img src={`/appIcons/${props.appIcon}Icon.png`} alt="icon" className='siteIcon' />
                 <div className='siteDetails'>
-                    <p className='siteName'>{props.appIcon}</p>
+                    <p className='siteName'>{props.appName}</p>
                     <CopyPassword />
                 </div>
             </div>

@@ -23,8 +23,45 @@ const HomePage = () => {
     setorangeTab2(true);
     setorangeTab1(false);
   }
+
+  const [modal1, setmodal1] = useState(true)
+  const [modal2, setmodal2] = useState(false)
+
+
+  const openModal2 = () => {
+    setmodal1(false);
+    setmodal2(true);
+  }
+
   console.log(orangeTab1)
   const data = [
+    {
+      siteName: 'Linkedin',
+      url: 'www.linkdin.com',
+      sector: 'Social Media',
+      userName: 'ssmraok',
+      sitePassword: 'abcd123',
+      notes: '',
+      icon: '/password-manager/public/appIcons/linkedinIcon.png'
+    },
+    {
+      siteName: 'Facebook',
+      url: 'www.facebook.com',
+      sector: 'Social Media',
+      userName: 'ssmraok',
+      sitePassword: 'abcdXYZ',
+      notes: '',
+      icon: '/password-manager/public/appIcons/facebookIcon.png',
+    },
+    {
+      siteName: 'YouTube',
+      url: 'www.youtube.com',
+      sector: 'Social Media',
+      userName: 'ssmraok',
+      sitePassword: 'abcd123',
+      notes: '',
+      icon: '/password-manager/public/appIcons/youtubeIcon.png',
+    },
     {
       siteName: 'Facebook',
       url: 'www.facebook.com',
@@ -54,25 +91,21 @@ const HomePage = () => {
     }
   ]
 
-  if (localStorage.getItem('user Data') === null || 'undefined') {
-    localStorage.setItem('user Data', JSON.stringify(data))
+
+
+  const getFormData = (e: any) => {
+    e.preventDefault();
+    localStorage.setItem("formdata", JSON.stringify(users))
+
   }
-
-  const previousData = JSON.parse(localStorage.getItem('user Data') || '[]')
-
-  console.log(previousData)
-
-  const getFormData = (e:any) => {
-    console.log(e);
+  let name: any, value: any;
+  const handleInput = (r: any) => {
+    name = r.target.name;
+    value = r.target.value;
+    setUsers({ ...users, [name]: value })
   }
-  let name:any ;
-  let value:any;
-  const handleInput = (r:any) =>{
-    name = r.event.name;
-    value = r.event.value;
-    console.log(name)
-
-    setUsers({ ...users, [name]:value})
+  const resetForm = () => {
+    setUsers({ ...users, url: "", siteName: "", sector: "", userName: "", sitepass: "", notes: "" })
   }
 
   return (
@@ -105,10 +138,19 @@ const HomePage = () => {
             </div>
             <div className='tabOptions'>
               <img src={require("../../assets/image/sync.png")} alt="sync" className='iconTab' />
-              <img src={require("../../assets/image/profile.png")} alt="profile" className='iconTab' />
+              <img src={require("../../assets/image/profilepc.png")} alt="profile" className='iconTab' />
 
             </div>
 
+          </div>
+          <div className='mobileHeaderBlue'>
+            <img src={require("../../assets/image/burger_menu.png")} alt='burgir' className='burgirIconMobile' onClick={showTab1} />
+            <div className='mobileHeaderLogos'>
+              <img src={require("../../assets/image/PASS MANAGER.png")} alt="pass" className='logoIconPass' />
+              <img src={require("../../assets/image/search.png")} alt="search" className='logoIconSearch' />
+              <img src={require("../../assets/image/sync_icn.png")} alt="sync" className='logoIconSync' />
+              <img src={require("../../assets/image/profile.png")} alt="profile" className='logoIconProfile' />
+            </div>
           </div>
           <div className='mainContent'>
             <div className='titleAndSearch'>
@@ -132,67 +174,120 @@ const HomePage = () => {
               </div>
             </div>
             <div className='vaultWindow'>
-              {/* <div className='addSite'>
-                <p>Please Click on the “+” symbol
-                  to add sites</p>
-              </div> */}
-              <div className='sitesGrid gridFlex'>
-                <SiteContainer appIcon="facebook" />
-                <SiteContainer appIcon="youtube" />
-                <SiteContainer appIcon="pinterest" />
-                <SiteContainer appIcon="gmail" />
-                <SiteContainer appIcon="linkedin" />
-                <SiteContainer />
-                <SiteContainer />
-                <SiteContainer />
-                <SiteContainer />
-              </div>
-              
+              {
+                data.length === 0 ?
+                  <div className='addSite'>
+                    <p>Please Click on the “+” symbol
+                      to add sites</p>
+                  </div>
+                  :
+                  <div className='sitesGrid gridFlex'>
+                    <img src={require("../../assets/image/add_btn.png")} className="addIconMobile" alt='addIcon' onClick={toggleModal} />
+                    <SiteContainer  appIcon="facebook" appName="FaceBook"/>
+                    <SiteContainer  appIcon="youtube" appName="YouTube"/>
+                    <SiteContainer  appIcon="linkedin" appName="LinkedIn"/>
+                    <SiteContainer  appIcon="pinterest" appName="Pinterest"/>
+                    
+                  </div>
+                  
+              }
+
+
+
               {
                 modal &&
                 <div className='overlayModal' >
                   <div className="modal">
                     <div onClick={toggleModal} className="overlay"></div>
                     <div className="modalContent">
-                      <form className='modal1' onSubmit={getFormData}>
-                        <div className='siteNameModalHead'>Add Site</div>
-                        <div className='line1 flexColuming'>
-                          <label>URL</label>
-                          <input type="text" name="url" id="" className='urlInput' value={users.url} onChange={handleInput}/>
-                        </div>
-                        <div className='line2 rowFlexing'>
-                          <div className='leftInput flexColuming'>
-                            <label>Site Name</label>
-                            <input type="text" name="siteName" id="" value={users.siteName} onChange={handleInput}/>
-                          </div>
-                          <div className='rightInput flexColuming'>
-                            <label>Sector/Folder</label>
-                            <input type="text" name="sector" id="" value={users.sector} onChange={handleInput}/>
-                          </div>
+                      {
+                        modal1 &&
 
-                        </div>
-                        <div className='line3 rowFlexing'>
-                          <div className='leftInput flexColuming'>
-                            <label>User Name</label>
-                            <input type="text" name="userName" id="" value={users.userName} onChange={handleInput}/>
+                        <form className='modal1' onSubmit={getFormData}>
+                          <div className='siteNameModalHead'>Add Site</div>
+                          <div className='line1 flexColuming'>
+                            <label>URL</label>
+                            <input type="text" name="url" id="" className='urlInput modalInputBox' value={users.url} onChange={handleInput} />
                           </div>
-                          <div className='rightInput flexColuming'>
-                            <label>Site Password</label>
-                            <input type="password" name="sitepass" id="" value={users.sitepass} onChange={handleInput}/>
+                          <div className='line2 rowFlexing'>
+                            <div className='leftInput flexColuming'>
+                              <label>Site Name</label>
+                              <input type="text" name="siteName" id="" value={users.siteName} onChange={handleInput} className='urlInput modalInputBox' />
+                            </div>
+                            <div className='rightInput flexColuming'>
+                              <label>Sector/Folder</label>
+                              <input type="text" name="sector" id="" value={users.sector} onChange={handleInput} className='sectorInput modalInputBox' />
+                            </div>
+
                           </div>
-                        </div>
-                        <div className='line4 flexColuming'>
-                          <label>Notes</label>
-                          <textarea name="notes" id="" className='textArea' value={users.notes} onChange={handleInput}></textarea>
-                        </div>
-                        <div className='buttonsLine5'>
-                          <button>Reset</button>
-                          <button type='submit'>Save</button>
-                        </div>
-                        <button className="close-modal" onClick={toggleModal}>
-                          <img src={require("../../assets/image/close_btn.png")} alt="" />
-                        </button>
-                      </form>
+                          <div className='line3 rowFlexing'>
+                            <div className='leftInput flexColuming'>
+                              <label>User Name</label>
+                              <input type="text" name="userName" id="" value={users.userName} onChange={handleInput} className='usernameInput modalInputBox' />
+                            </div>
+                            <div className='rightInput flexColuming'>
+                              <label>Site Password</label>
+                              <input type="text" name="sitepass" id="" value={users.sitepass} onChange={handleInput} className='passwordInput modalInputBox' />
+                            </div>
+                          </div>
+                          <div className='line4 flexColuming'>
+                            <label>Notes</label>
+                            <textarea name="notes" id="" value={users.notes} onChange={handleInput} className='textAreaInput modalInputBox'></textarea>
+                          </div>
+                          <div className='buttonsLine5'>
+                            <button className='resetButton' onClick={resetForm}>Reset</button>
+                            <button type='submit' className='saveButton'>Save</button>
+                          </div>
+                          <button className="close-modal" onClick={toggleModal}>
+                            <img src={require("../../assets/image/close_btn.png")} alt="" />
+                          </button>
+                        </form>
+                      }
+
+                      {/* modal2 */}
+                      {
+                        modal2 &&
+
+                        <form className='modal1' onSubmit={getFormData}>
+                          <div className='siteNameModalHead'>Add Site</div>
+                          <div className='line1 flexColuming'>
+                            <label>URL</label>
+                            <input type="text" name="url" id="" className='urlInput modalInputBox' value={users.url} onChange={handleInput} />
+                          </div>
+                          <div className='line2 rowFlexing'>
+                            <div className='leftInput flexColuming'>
+                              <label>Site Name</label>
+                              <input type="text" name="siteName" id="" value={users.siteName} onChange={handleInput} className='urlInput modalInputBox' />
+                            </div>
+                            <div className='rightInput flexColuming'>
+                              <label>Sector/Folder</label>
+                              <input type="text" name="sector" id="" value={users.sector} onChange={handleInput} className='sectorInput modalInputBox' />
+                            </div>
+
+                          </div>
+                          <div className='line3 rowFlexing'>
+                            <div className='leftInput flexColuming'>
+                              <label>User Name</label>
+                              <input type="text" name="userName" id="" value={users.userName} onChange={handleInput} className='usernameInput modalInputBox' />
+                            </div>
+                            <div className='rightInput flexColuming'>
+                              <label>Site Password</label>
+                              <input type="text" name="sitepass" id="" value={users.sitepass} onChange={handleInput} className='passwordInput modalInputBox' />
+                            </div>
+                          </div>
+                          <div className='line4 flexColuming'>
+                            <label>Notes</label>
+                            <textarea name="notes" id="" value={users.notes} onChange={handleInput} className='textAreaInput modalInputBox'></textarea>
+                          </div>
+                          <div className='buttonsLine5'>
+                            <button className='resetButton'>Reset</button>
+                            <button type='submit' className='saveButton'>Save</button>
+                          </div>
+                          <button className="close-modal" onClick={toggleModal}>
+                            <img src={require("../../assets/image/close_btn.png")} alt="" />
+                          </button>
+                        </form>
+                      }
                     </div>
                   </div>
                 </div>

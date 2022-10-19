@@ -17,3 +17,14 @@
         display: none;
     }
 }
+@media screen and (max-height:800px) and (min-width: 360px) and (max-width: 500px) and (min-height: 640px){
+    .signUpHeading{
+        display: none;
+    }
+    .signInBox{
+        margin-top: 0px;
+    }
+    .signUpBox{
+        margin-top:-210px
+    }
+}

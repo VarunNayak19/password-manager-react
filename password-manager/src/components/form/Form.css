@@ -104,3 +104,18 @@
     margin-left: 110px;
   }
 }
+@media screen and (min-width: 350px) and (max-width: 500px){
+  .signInBox {
+    margin-left: 184px;
+    margin-top: -336px;
+}
+.signUpText {
+  position: relative;
+  margin-top: 10px;
+  display: none;
+}
+
+
+
+
+}

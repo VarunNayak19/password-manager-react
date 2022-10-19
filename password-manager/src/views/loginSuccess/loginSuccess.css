@@ -11,7 +11,36 @@
 .loginBox{
     margin-top: 0;
 }
-@media screen and (height:640px) and (width: 360px){
+@media screen and (max-width:900px) and (min-width:500px){
+    .greenboxSuccess{
+        margin-left: 20px;
+        display: none;
+    }
+    .blackToast{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 66px;
+        width: 320px;
+        border-radius: 33px;
+        background-color: #323232;
+        position: absolute;
+        left:100px;
+        bottom:-100px;
+    }
+    .blackToast p{
+        height: 49px;
+        width: 187px;
+        color: #FFFFFF;
+        font-family: "Open Sans";
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 22px;
+        text-align: center;
+    }
+
+}
+@media screen and (max-height:800px) and (min-width: 360px) and (max-width: 500px) and (min-height: 640px){
     .greenboxSuccess{
         display: none;
     }
@@ -24,8 +53,8 @@
         border-radius: 33px;
         background-color: #323232;
         position: absolute;
-        margin-top: 680px;
-        margin-left: 150px;
+        left:60px;
+        bottom:-100px;
     }
     .blackToast p{
         height: 49px;

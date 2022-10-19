@@ -24,3 +24,9 @@
     margin-right: 8px;
     color: #63D995;
 }
+@media screen and (width:900px){
+    .greenbox{
+        margin-left: 20px;
+        display: none;
+    }
+}

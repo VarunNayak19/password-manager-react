@@ -76,6 +76,13 @@
     justify-content: space-between;
     z-index: 2;
 }
+.mobileHeaderBlue{
+    width: 100%;
+    height: 59px;
+    background-color: #0E85FF;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.12), 0 4px 4px 0 rgba(0,0,0,0.24);
+    display: none;
+}
 .logo{
     padding-left: 7%;
     padding-top: 2.5%;
@@ -232,7 +239,7 @@
 .gridFlex{
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns:repeat(auto-fill,minmax(350px,1fr));
 }
 
 /* Modal */
@@ -269,23 +276,16 @@ body.active-modal {
 }
 .modalContent {
     position: absolute;
-    /* top: 40%;
-    left: 50%; */
-    /* transform: translate(-50%, -50%); */
     line-height: 1.4;
-    background: #f1f1f1;
-    /* padding: 14px 28px; */
+    background:transparent;
     border-radius: 3px;
     max-width: 600px;
     min-width: 300px;
-}
-.modalContent{
     display: flex;
     flex-direction: column;
     width: auto;
     height: auto;
 }
-
 .close-modal {
     position: absolute;
     background-color: transparent;
@@ -297,11 +297,18 @@ body.active-modal {
 
 /* modal1 */
 .modal1{
-    width: auto;
-    height: auto;
+
     padding: 24.5px 37.5px 30px 30.5px;
-    background-color: #f1f1f1;
     position: relative;
+    box-sizing: border-box;
+    height: 598px;
+    width: 768px;
+    border: 1px solid #979797;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 .flexColuming{
     display: flex;
@@ -326,7 +333,7 @@ body.active-modal {
     line-height: 41px;
     margin-bottom: 40px;
 }
-.line1 label,.leftInput label,.rightInput label{
+.line1 label,.leftInput label,.rightInput label,.line4 label{
     height: 24px;
     width: auto;
     color: #949CA5;
@@ -336,7 +343,125 @@ body.active-modal {
     line-height: 24px;
     margin-bottom: 10.5px;
 }
-.urlInput{
-    width: 701px;
-    position: relative;
+.modalInputBox{
+    box-sizing: border-box;
+    height: 36px;
+    border: 1px solid #F5F7FB;
+    border-radius: 4px;
+    background-color: #F5F7FB;
+    margin-bottom: 26px;
+}
+.textAreaInput{
+    height: 61px;
+}
+.leftInput,.rightInput{
+    width: 50%;
+}
+.rightInput{
+    margin-left: 20px;
+}
+.buttonsLine5{
+    display: flex;
+    justify-content: right;
+}
+.resetButton,.saveButton{
+    box-sizing: border-box;
+    height: 46px;
+    width: 181px;
+    margin-left: 20px;
+}
+.resetButton{
+    border: 1px solid #0E85FF;
+    border-radius: 4px;
+    color: #0E85FF;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-align: center;
+    background-color:transparent;
+}
+.saveButton{
+    border-radius: 4px;
+    background-color: #0E85FF;
+    color: #FFFFFF;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-align: center;
+    border: none;
+
+}
+.addIconMobile{
+    display: none;
+}
+@media screen and (max-height:800px) and (min-width: 360px) and (max-width: 500px) and (min-height: 640px){
+    .gridFlex{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr;
+    }
+    .sitesGrid{
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .leftTab{
+        height: 100vh;
+        width: 118px;
+        background-color: #2892FF;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        display: none;
+    }
+    .titleRightSide{
+        display: none;
+    }
+    .titleLeftSide{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .headerContent{
+        display: none;
+    }
+    .sitesHeading p{
+        margin-top: 20px;
+    }
+    .mobileHeaderBlue{
+        display: flex;
+    }
+    .subHead{
+        margin-top: 0px;
+    }
+    .burgirIconMobile{
+        height: 16px;
+        width: 18px;
+        margin: 21px 0 0 20px;
+    }
+    .mobileHeaderLogos{
+        margin: 13px 0 0 19px;
+    }
+    .logoIconSearch{
+        margin-left: 53px;
+    }
+    .logoIconSync{
+        margin-left: 33px;
+
+    }
+    .logoIconProfile{
+        margin-left: 34px;
+    }
+    .addIconMobile{
+        display: flex;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+    }
 }

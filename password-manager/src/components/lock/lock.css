@@ -32,7 +32,7 @@
         margin-left: 10%;
     }
 }
-@media screen and (height:640px) and (width: 360px){
+@media screen and (max-height:800px) and (min-width: 360px) and (max-width: 500px) and (min-height: 640px){
     .protectSentence{
         display: none;
     }
@@ -78,6 +78,9 @@
     }
     .signUpTabDiv p{
         text-decoration: none;
+    }
+    .signUpTabDiv{
+        text-decoration:dashed;
     }
     .orangeUnder{
         height: 4px;
