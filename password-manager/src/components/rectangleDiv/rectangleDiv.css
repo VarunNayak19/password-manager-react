@@ -1,12 +1,12 @@
-.rectangleDiv{
-        height: 481px;
-        width: 1px;
-        opacity: 0.19;
-        background-color: #F5F7FB;
+.rectangleDiv {
+  height: 481px;
+  width: 1px;
+  opacity: 0.19;
+  background-color: #f5f7fb;
 }
 
 @media screen and (max-width: 900px) {
-        .rectangleDiv{
-                display: none;
-        }
+  .rectangleDiv {
+    display: none;
+  }
 }

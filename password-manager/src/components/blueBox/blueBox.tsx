@@ -4,7 +4,7 @@ import Lock from "../lock/lock"
 const BlueBox = () => {
   return (
     <div className="box">
-        <Lock />
+      <Lock />
     </div>
   )
 }

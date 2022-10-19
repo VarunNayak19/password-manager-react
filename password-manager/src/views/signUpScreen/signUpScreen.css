@@ -1,24 +1,24 @@
-.signUpContainer{
-    margin: 205px 0 338px 0;
+.signUpContainer {
+  margin: 205px 0 338px 0;
 }
-.username{
-    box-sizing: border-box;
-    height: 54px;
-    width: 332px;
-    border: 0.55px solid rgba(208,208,208,0.5);
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    color: #787E8C;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 22px;
-    padding: 0 0 0 22px;
+.username {
+  box-sizing: border-box;
+  height: 54px;
+  width: 332px;
+  border: 0.55px solid rgba(208, 208, 208, 0.5);
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #787e8c;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
+  padding: 0 0 0 22px;
 }
-@media screen and (max-height:800px) and (min-width: 360px) and (max-width: 500px) and (min-height: 640px){
-    .signUpContainer{
-        margin-top: 0;
-        height: 100vh;
-    }
+@media screen and (max-height: 800px) and (min-width: 360px) and (max-width: 500px) and (min-height: 640px) {
+  .signUpContainer {
+    margin-top: 0;
+    height: 100vh;
+  }
 }

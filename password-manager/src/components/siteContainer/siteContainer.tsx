@@ -2,7 +2,7 @@ import React from 'react'
 import CopyPassword from '../copyPassword/copyPassword'
 import './siteContainer.css'
 
-const SiteContainer = (props:any) => {
+const SiteContainer = (props: any) => {
     return (
         <div className='siteContainer'>
             <div className='siteHead'>
@@ -13,7 +13,7 @@ const SiteContainer = (props:any) => {
                 </div>
             </div>
             <div className='siteLink'>
-            www.{props.appIcon}.com
+                www.{props.appIcon}.com
             </div>
         </div>
     )

@@ -1,91 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-.lockBox{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 25px;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+.lockBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
 }
-.lockboxLogo{
-    height: 202px;
-    width: 170px;
-    margin-bottom: 30px;
+.lockboxLogo {
+  height: 202px;
+  width: 170px;
+  margin-bottom: 30px;
 }
-.protectSentence{
-    font-family: 'Open Sans', sans-serif;
-    height: 54px;
-    width: 281px;
-    color: #FFFFFF;
-    font-family: "Open Sans";
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    line-height: 27px;
-    text-align: center;
+.protectSentence {
+  font-family: "Open Sans", sans-serif;
+  height: 54px;
+  width: 281px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 27px;
+  text-align: center;
 }
-.passmanagerLogoName,.signInTabDiv,.signUpTabDiv{
-    display: none;
+.passmanagerLogoName,
+.signInTabDiv,
+.signUpTabDiv {
+  display: none;
 }
 
-@media screen and (min-width: 350px) and (max-width: 500px){
-    .lockBox{
-        margin-left: 10%;
-    }
+@media screen and (min-width: 350px) and (max-width: 500px) {
+  .lockBox {
+    margin-left: 10%;
+  }
 }
-@media screen and (max-height:800px) and (min-width: 360px) and (max-width: 500px) and (min-height: 640px){
-    .protectSentence{
-        display: none;
-    }
-    .lockboxLogo{
-        height: 68px;
-        width: 56.67px;
-    }
-    .passmanagerLogoName,.signInTabDiv,.signUpTabDiv{
-        display:flex;
-    }
-    .logoBox{
-        display: flex;
-        margin-bottom: 30px;
-    }
-    .passmanagerLogoName{
-        height: 54px;
-        width: 100px;
-        color: #FBFBFB;
-        font-family: "Open Sans";
-        font-size: 20px;
-        font-weight: bold;
-        letter-spacing: 1px;
-        line-height: 27px;
-        margin-left: 13px;
-    }
-    .switchingTab{
-        display: flex;
-        width: 260px;
-        justify-content: space-between;
-    }
-    .signInTabDiv,.signUpTabDiv{
-        height: 27px;
-        width: 90px;
-        color: #FFFFFF;
-        font-family: "Open Sans";
-        font-size: 20px;
-        font-weight: bold;
-        letter-spacing: 0;
-        line-height: 27px;
-        display: flex;
-        flex-direction: column;
-        text-decoration: none !important;
-    }
-    .signUpTabDiv p{
-        text-decoration: none;
-    }
-    .signUpTabDiv{
-        text-decoration:dashed;
-    }
-    .orangeUnder{
-        height: 4px;
-        width: 81px;
-        border-radius: 3.5px;
-        background-color: #FFA222;
-    }
+@media screen and (max-height: 800px) and (min-width: 360px) and (max-width: 500px) and (min-height: 640px) {
+  .protectSentence {
+    display: none;
+  }
+  .lockboxLogo {
+    height: 68px;
+    width: 56.67px;
+  }
+  .passmanagerLogoName,
+  .signInTabDiv,
+  .signUpTabDiv {
+    display: flex;
+  }
+  .logoBox {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  .passmanagerLogoName {
+    height: 54px;
+    width: 100px;
+    color: #fbfbfb;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 27px;
+    margin-left: 13px;
+  }
+  .switchingTab {
+    display: flex;
+    width: 260px;
+    justify-content: space-between;
+  }
+  .signInTabDiv,
+  .signUpTabDiv {
+    height: 27px;
+    width: 90px;
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 27px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important;
+  }
+  .signUpTabDiv p {
+    text-decoration: none;
+  }
+  .signUpTabDiv {
+    text-decoration: dashed;
+  }
+  .orangeUnder {
+    height: 4px;
+    width: 81px;
+    border-radius: 3.5px;
+    background-color: #ffa222;
+  }
 }

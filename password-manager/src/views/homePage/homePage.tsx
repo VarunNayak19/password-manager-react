@@ -183,13 +183,13 @@ const HomePage = () => {
                   :
                   <div className='sitesGrid gridFlex'>
                     <img src={require("../../assets/image/add_btn.png")} className="addIconMobile" alt='addIcon' onClick={toggleModal} />
-                    <SiteContainer  appIcon="facebook" appName="FaceBook"/>
-                    <SiteContainer  appIcon="youtube" appName="YouTube"/>
-                    <SiteContainer  appIcon="linkedin" appName="LinkedIn"/>
-                    <SiteContainer  appIcon="pinterest" appName="Pinterest"/>
-                    
+                    <SiteContainer appIcon="facebook" appName="FaceBook" />
+                    <SiteContainer appIcon="youtube" appName="YouTube" />
+                    <SiteContainer appIcon="linkedin" appName="LinkedIn" />
+                    <SiteContainer appIcon="pinterest" appName="Pinterest" />
+
                   </div>
-                  
+
               }
 
 

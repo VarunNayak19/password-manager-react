@@ -1,69 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 
-.loginSuccessContainer{
-    display: flex;
-    flex-direction: column;
+.loginSuccessContainer {
+  display: flex;
+  flex-direction: column;
 }
-.blackToast{
+.blackToast {
+  display: none;
+}
+
+.loginBox {
+  margin-top: 0;
+}
+@media screen and (max-width: 900px) and (min-width: 500px) {
+  .greenboxSuccess {
+    margin-left: 20px;
     display: none;
+  }
+  .blackToast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 66px;
+    width: 320px;
+    border-radius: 33px;
+    background-color: #323232;
+    position: absolute;
+    left: 100px;
+    bottom: -100px;
+  }
+  .blackToast p {
+    height: 49px;
+    width: 187px;
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+  }
 }
-
-.loginBox{
-    margin-top: 0;
-}
-@media screen and (max-width:900px) and (min-width:500px){
-    .greenboxSuccess{
-        margin-left: 20px;
-        display: none;
-    }
-    .blackToast{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 66px;
-        width: 320px;
-        border-radius: 33px;
-        background-color: #323232;
-        position: absolute;
-        left:100px;
-        bottom:-100px;
-    }
-    .blackToast p{
-        height: 49px;
-        width: 187px;
-        color: #FFFFFF;
-        font-family: "Open Sans";
-        font-size: 16px;
-        letter-spacing: 0;
-        line-height: 22px;
-        text-align: center;
-    }
-
-}
-@media screen and (max-height:800px) and (min-width: 360px) and (max-width: 500px) and (min-height: 640px){
-    .greenboxSuccess{
-        display: none;
-    }
-    .blackToast{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 66px;
-        width: 320px;
-        border-radius: 33px;
-        background-color: #323232;
-        position: absolute;
-        left:60px;
-        bottom:-100px;
-    }
-    .blackToast p{
-        height: 49px;
-        width: 187px;
-        color: #FFFFFF;
-        font-family: "Open Sans";
-        font-size: 16px;
-        letter-spacing: 0;
-        line-height: 22px;
-        text-align: center;
-    }
+@media screen and (max-height: 800px) and (min-width: 360px) and (max-width: 500px) and (min-height: 640px) {
+  .greenboxSuccess {
+    display: none;
+  }
+  .blackToast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 66px;
+    width: 320px;
+    border-radius: 33px;
+    background-color: #323232;
+    position: absolute;
+    left: 60px;
+    bottom: -100px;
+  }
+  .blackToast p {
+    height: 49px;
+    width: 187px;
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+  }
 }

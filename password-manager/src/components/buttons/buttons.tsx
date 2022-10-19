@@ -1,8 +1,10 @@
 import "./buttons.css"
-const Buttons = (props:any) => {
+const Buttons = (props: any) => {
     return (
         <div>
-            <button className="button">{props.value}</button>
+            <button className="button">
+                {props.value}
+            </button>
         </div>
     )
 }

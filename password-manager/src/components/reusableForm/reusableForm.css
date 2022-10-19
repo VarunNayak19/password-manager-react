@@ -1,30 +1,30 @@
 @media screen and (min-width: 500px) and (max-width: 900px) {
-    .formBox{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height:300px;
-    }
-    .signInBox{
-        margin: 0;
-    }
+  .formBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  .signInBox {
+    margin: 0;
+  }
 }
-@media screen and (height:640px) and (width: 360px){
-    .formBox{
-        margin-left: 30px;
-    }
-    .signUpText{
-        display: none;
-    }
+@media screen and (height: 640px) and (width: 360px) {
+  .formBox {
+    margin-left: 30px;
+  }
+  .signUpText {
+    display: none;
+  }
 }
-@media screen and (max-height:800px) and (min-width: 360px) and (max-width: 500px) and (min-height: 640px){
-    .signUpHeading{
-        display: none;
-    }
-    .signInBox{
-        margin-top: 0px;
-    }
-    .signUpBox{
-        margin-top:-210px
-    }
+@media screen and (max-height: 800px) and (min-width: 360px) and (max-width: 500px) and (min-height: 640px) {
+  .signUpHeading {
+    display: none;
+  }
+  .signInBox {
+    margin-top: 0px;
+  }
+  .signUpBox {
+    margin-top: -210px;
+  }
 }

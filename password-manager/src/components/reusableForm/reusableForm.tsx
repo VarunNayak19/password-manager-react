@@ -5,13 +5,13 @@ import '../signUpForm/signUpForm.css'
 import '../buttons/buttons.css'
 import '../input/input.css'
 import '../signUpForm/signUpForm.css'
-import {Link,useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './reusableForm.css'
 import { useState } from "react"
 
 const ReusableForm = (props: any) => {
-    const [password, setPassword] = useState(false);
-    const [password2, setPassword2] = useState(false);
+  const [password, setPassword] = useState(false);
+  const [password2, setPassword2] = useState(false);
   const togglePassword = () => {
     setPassword(!password);
   };
@@ -81,12 +81,12 @@ const ReusableForm = (props: any) => {
     }
   };
 
-//   const navigate = useNavigate();
-//   const [password, setPassword] = useState<boolean>(false);
+  //   const navigate = useNavigate();
+  //   const [password, setPassword] = useState<boolean>(false);
 
-//   const togglePassword = () => {
-//     setPassword(!password);
-//   };
+  //   const togglePassword = () => {
+  //     setPassword(!password);
+  //   };
 
   if (localStorage.getItem("users") === null) {
     localStorage.setItem(
@@ -130,59 +130,59 @@ const ReusableForm = (props: any) => {
     }
   };
 
-    return (
-        <div className="formBox">
-            {
-                props.type === 'signUp' ?
-                    <>
-                        <form className="signInBox" onSubmit={signUpHandler}>
-                            <p className="signUpHeading ">SIGN UP</p>
-                            <input type="text" placeholder="Mobile Number" className="username" name="mobileNumber"/>
-                            {/* <Input placeholder="Enter Mobile Number" /> */}
-                            <div className="mpinBox">
-                                {/* <Input placeholder="Enter 4 Digit MPin" /> */}
-                                <input type={password?"text":"password"} placeholder="MPin" minLength={6} maxLength={6} className="input mpin" name="mPin"/>
-                                <img src={require("../../assets/image/eye_on.png")} alt="eye" className="toggleEye" onClick={togglePassword}/>
-                            </div>
-                            <div className="mpinBox">
-                                {/* <Input placeholder="Re-Enter 4 Digit MPin" /> */}
-                                <input type={password2?"text":"password"} placeholder="MPin" minLength={6} maxLength={6} className="input mpin"  name="cmPin"/>
-                                <img src={require("../../assets/image/eye_on.png")} alt="eye" className="toggleEye" onClick={togglePassword2} />
-                            </div>
-                            <div className="bottombox">
-                                {/* <Link to="/success"> */}
-                                <button type="submit" className="signUpButton">SIGN UP</button>
-                                {/* </Link> */}
-                                
-                            </div>
-                        </form>
-                    </>
-                    :
-                    <>
-                        <form className="signInBox signUpBox" onSubmit={onsubmitHandler}>
-                            <p className="signInHeading">SIGN IN TO YOUR ACCOUNT</p>
-                            <input type="text" placeholder="Mobile Number" className="input username" name="mobile" />
-                            {/* <Input placeholder="Mobile Number" /> */}
-                            <div className="mpinBox">
-                                {/* <Input placeholder="MPin" minValue={4} maxValue={4} /> */}
-                                <input type="password" placeholder="MPin" minLength={6} maxLength={6} className="input mpin" name="mpin" />
-                                <img src={require("../../assets/image/eye_on.png")} alt="eye" className="toggleEye" />
-                            </div>
-                            <div className="bottombox">
-                                <p className="forgotPasswordText">Forgot your password?</p>
-                                {/* <button className="signInButton">SIGN IN</button> */}
-                                <div className="buttonDiv">
-                                   {/* <Link to="/home"> */}
-                                    <Buttons value="SIGN IN" type="submit"/>
-                                    {/* </Link> */}
-                                </div>
-                                <p className="signUpText">Don’t have a Account?<Link to="/signup" className="signUpLink">SIGNUP</Link> </p>
-                            </div>
-                        </form>
-                    </>
-            }
-        </div>
-    )
+  return (
+    <div className="formBox">
+      {
+        props.type === 'signUp' ?
+          <>
+            <form className="signInBox" onSubmit={signUpHandler}>
+              <p className="signUpHeading ">SIGN UP</p>
+              <input type="text" placeholder="Mobile Number" className="username" name="mobileNumber" />
+              {/* <Input placeholder="Enter Mobile Number" /> */}
+              <div className="mpinBox">
+                {/* <Input placeholder="Enter 4 Digit MPin" /> */}
+                <input type={password ? "text" : "password"} placeholder="MPin" minLength={6} maxLength={6} className="input mpin" name="mPin" />
+                <img src={require("../../assets/image/eye_on.png")} alt="eye" className="toggleEye" onClick={togglePassword} />
+              </div>
+              <div className="mpinBox">
+                {/* <Input placeholder="Re-Enter 4 Digit MPin" /> */}
+                <input type={password2 ? "text" : "password"} placeholder="MPin" minLength={6} maxLength={6} className="input mpin" name="cmPin" />
+                <img src={require("../../assets/image/eye_on.png")} alt="eye" className="toggleEye" onClick={togglePassword2} />
+              </div>
+              <div className="bottombox">
+                {/* <Link to="/success"> */}
+                <button type="submit" className="signUpButton">SIGN UP</button>
+                {/* </Link> */}
+
+              </div>
+            </form>
+          </>
+          :
+          <>
+            <form className="signInBox signUpBox" onSubmit={onsubmitHandler}>
+              <p className="signInHeading">SIGN IN TO YOUR ACCOUNT</p>
+              <input type="text" placeholder="Mobile Number" className="input username" name="mobile" />
+              {/* <Input placeholder="Mobile Number" /> */}
+              <div className="mpinBox">
+                {/* <Input placeholder="MPin" minValue={4} maxValue={4} /> */}
+                <input type="password" placeholder="MPin" minLength={6} maxLength={6} className="input mpin" name="mpin" />
+                <img src={require("../../assets/image/eye_on.png")} alt="eye" className="toggleEye" />
+              </div>
+              <div className="bottombox">
+                <p className="forgotPasswordText">Forgot your password?</p>
+                {/* <button className="signInButton">SIGN IN</button> */}
+                <div className="buttonDiv">
+                  {/* <Link to="/home"> */}
+                  <Buttons value="SIGN IN" type="submit" />
+                  {/* </Link> */}
+                </div>
+                <p className="signUpText">Don’t have a Account?<Link to="/signup" className="signUpLink">SIGNUP</Link> </p>
+              </div>
+            </form>
+          </>
+      }
+    </div>
+  )
 }
 
 export default ReusableForm

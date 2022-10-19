@@ -22,27 +22,27 @@ const Lock = () => {
       <div>
         <div className="switchingTab">
           <div >
-          <Link to="/">
-            <a className="signInTabDiv" onClick={switchTab1}>SIGN IN</a>
+            <Link to="/" onClick={switchTab1} className="signInTabDiv">
+              <a className="signInTabDiv" >SIGN IN</a>
             </Link>
             {
               orange1 &&
               <div className="orangeUnder"></div>
             }
-              </div>
+          </div>
           <div >
-            <Link to="/signup">
-            <a className="signUpTabDiv" onClick={switchTab2}>
-              <p>SIGN UP</p>
-              
+            <Link to="/signup" className="signInTabDiv">
+              <a className="signUpTabDiv" onClick={switchTab2}>
+                <p>SIGN UP</p>
+
               </a>
             </Link>
             {
               orange2 &&
               <div className="orangeUnder"></div>
             }
-            
-            </div>
+
+          </div>
         </div>
         <p className="protectSentence">Protect & Manage every password in your business</p>
       </div>

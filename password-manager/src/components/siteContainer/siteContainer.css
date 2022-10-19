@@ -1,69 +1,69 @@
-.siteContainer{
-    height: 115px;
-    width: 363px;
-    border-radius: 14px;
-    background-color: #F5F7FB;
-    box-shadow: 0 8px 18px 10px rgba(0,0,0,0.02);
-    display: flex;
-    flex-direction: column;
+.siteContainer {
+  height: 115px;
+  width: 363px;
+  border-radius: 14px;
+  background-color: #f5f7fb;
+  box-shadow: 0 8px 18px 10px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
 }
-.siteHead{
-    height: auto;
-    width: 100%;
-    display: flex;
-    position: relative;
+.siteHead {
+  height: auto;
+  width: 100%;
+  display: flex;
+  position: relative;
 }
-.siteIcon{
-    height: 50px;
-    width: 50px;
-    margin: 10px 0 0 20px;
+.siteIcon {
+  height: 50px;
+  width: 50px;
+  margin: 10px 0 0 20px;
 }
-.siteDetails{
-    margin-left: 155px;
-    margin-top: 0px;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
+.siteDetails {
+  margin-left: 155px;
+  margin-top: 0px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
 }
-.siteName{
-    width: inherit;
-    height: 27px;
-    width: 93px;
-    color: #0E85FF;
-    font-family: "Open Sans";
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 27px;
-    text-align: right;
-    margin: 6px 0 5px 24px;
+.siteName {
+  width: inherit;
+  height: 27px;
+  width: 93px;
+  color: #0e85ff;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 27px;
+  text-align: right;
+  margin: 6px 0 5px 24px;
 }
-.copy{
-    display: flex;
+.copy {
+  display: flex;
 }
-.copyIcon{
-    height: 19.8px;
-    width: 19.8px;
-    margin-right: 10px;
+.copyIcon {
+  height: 19.8px;
+  width: 19.8px;
+  margin-right: 10px;
 }
-.copyText{
-    height: 17px;
-    width: 90px;
-    color: #0E85FF;
-    font-family: "Open Sans";
-    font-size: 12.6px;
-    letter-spacing: 0;
-    line-height: 17px;
+.copyText {
+  height: 17px;
+  width: 90px;
+  color: #0e85ff;
+  font-family: "Open Sans";
+  font-size: 12.6px;
+  letter-spacing: 0;
+  line-height: 17px;
 }
-.siteLink{
-    display: flex;
-    margin-top: 18px;
-    justify-content: center;
-    align-items: center;
-    color: #3C4857;
-    font-family: "Open Sans";
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: 22px;
+.siteLink {
+  display: flex;
+  margin-top: 18px;
+  justify-content: center;
+  align-items: center;
+  color: #3c4857;
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 22px;
 }
